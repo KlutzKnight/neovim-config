@@ -7,3 +7,24 @@ for file_name, type in vim.fs.dir(plugins_dir, { follow = true }) do
     require('custom.plugins.' .. module)
   end
 end
+
+-- Add Rose Pine 
+vim.pack.add({
+  {
+    src = "https://github.com/rose-pine/neovim",
+    name = "rose-pine",
+  },
+})
+
+require("rose-pine").setup{}
+
+-- Add Kanagawa
+vim.pack.add({
+  {
+    src = "https://github.com/rebelot/kanagawa.nvim.git",
+    name = "kanagawa",
+  },
+})
+
+require("kanagawa").setup{}
+vim.cmd("colorscheme kanagawa")
